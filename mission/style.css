@@ -1,0 +1,35 @@
+body {
+    padding: 30px 150px;
+    border: 1px solid grey;
+    margin: 10px 20%;
+}
+header {
+    text-align: center;
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    color: #3469a9;
+    font-size: 1em;
+    margin-bottom: 4px;
+}
+hr {
+    color: #eaeaea;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+/* p {
+I don't think any modifications are needed here.
+} */
+.italics {
+    font-style: italic;
+}
+li {
+    margin-top: 20px;
+}
+#logo {
+    display: block;
+    width: 142px;
+    margin: 0 auto;
+}
