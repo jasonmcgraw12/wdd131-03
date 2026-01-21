@@ -13,14 +13,11 @@ function changeTheme() {
         document.body.style.color = "#c8d1d6";
         let img = document.getElementById("logo");
         img.src = "byui-logo-white.png";
-        // document.querySelector("body").background = #000;
-        // code for changes to colors and logo
     } else {
         document.body.style.backgroundColor = "";
         document.body.style.color = "";
         let img = document.getElementById("logo")
         img.src = "byui-logo-blue.webp";
-        // code for changes to colors and logo
     }
 }           
                     
