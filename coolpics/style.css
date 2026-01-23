@@ -61,7 +61,7 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1250px){
     header  {
         position: fixed;
         width: 100%;
@@ -71,6 +71,9 @@ footer {
     }
     .link-button {
         display: inline;
+    }
+    h2 {
+        padding-top: 150px;
     }
     #images {
         grid-template-columns: 1fr 1fr 1fr;
