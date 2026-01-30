@@ -24,8 +24,17 @@ button {
     color: aliceblue;
     margin: 0 5px;
 }
+#hamberger-menu {
+    font-size: 2em;
+    text-decoration: double;
+}
 .link-button {
     display: none;
+    margin: 2px auto;
+    width: 50px;
+    padding: 10px;
+    background-color: #1d5ca5;
+    border: #cccccc 2px solid;
 }
 button:hover {
     cursor: pointer;
@@ -46,6 +55,33 @@ img {
   border: 5px solid aliceblue;
   box-shadow: 1px 1px 1px 1px;
 }
+dialog {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    overflow: hidden;
+}
+dialog img {
+    width: 90%;
+    display: block;
+    margin: 20vh auto;
+}
+.close-viewer {
+    position: absolute;
+    top: 15vh;
+    right: 2vh;
+    font-size: 2em;
+    background-color: #1d5ca5;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: #cccccc 2px solid;
+}
+.close-viewer:hover {
+    border: #cccccc 4px solid;
+    width: 36px;
+    height: 36px;
+}
 footer {
     margin: 0;
 }
@@ -60,6 +96,9 @@ footer {
     #images {
         grid-template-columns: 1fr 1fr;
     }
+    dialog img {
+        height: 60%;
+    }
 }
 @media screen and (min-width: 1250px){
     header  {
@@ -71,6 +110,7 @@ footer {
     }
     .link-button {
         display: inline;
+        margin-bottom: 15px;
     }
     h2 {
         padding-top: 150px;
@@ -78,6 +118,9 @@ footer {
     #images {
         grid-template-columns: 1fr 1fr 1fr;
         margin: auto 150px;
+    }
+    dialog img {
+        height: 75%;
     }
     footer {
         position: fixed;
