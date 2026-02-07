@@ -1,0 +1,63 @@
+body {
+    margin: 0 20px;
+}
+nav{
+    text-align: right;
+}
+h1 {
+    text-align: center;
+}
+hr {
+    color: orange;
+}
+#links{
+    text-align: right;
+}
+a {
+    color: red;
+    text-align: right;
+    text-decoration: none;
+    margin: 0 20px;
+}
+#special-hr {
+    margin-top: 40px;
+}
+#date {
+    font-style: italic;
+}
+.info-text {
+    text-align: right;
+}
+h2 {
+    color: red;
+    margin: 0 20px 20px 20px;
+}
+img {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 50%;
+}
+.description {
+    margin: 0 20px;
+}
+#name {
+    text-align: center;
+}
+@media (min-width: 700px) {
+    #book-report {
+        display: grid;
+        grid-template-columns: 2fr 20px 3fr;
+    }
+    #special-hr {
+        margin: 10px;
+    }
+    #book-rating {
+        grid-row: 1;
+    }
+    #book-info {
+        grid-column-start: 3;
+    }
+    img {
+        width: 25%;
+    }
+}
