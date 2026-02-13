@@ -19,14 +19,14 @@ a {
     text-decoration: none;
     margin: 0 20px;
 }
-#special-hr {
+.special-hr {
     margin-top: 40px;
-}
-#date {
-    font-style: italic;
 }
 .info-text {
     text-align: right;
+}
+.date {
+    font-style: italic;
 }
 h2 {
     color: darkred;
@@ -44,17 +44,17 @@ img {
     text-align: center;
 }
 @media (min-width: 700px) {
-    #book-report {
+    .book-report {
         display: grid;
         grid-template-columns: 2fr 20px 3fr;
     }
-    #special-hr {
+    .special-hr {
         margin: 10px;
     }
-    #book-rating {
+    .book-rating {
         grid-row: 1;
     }
-    #book-info {
+    .book-info {
         grid-column-start: 3;
     }
     img {
