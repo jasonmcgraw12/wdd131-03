@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>credit card</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <form id="credit-grid" method="post">
+
+        <div class="credit-card" id="credit-front">
+            <p>Total: $199</p>
+            <p id="credit-emoji">💳</p>
+            <div id="card-number">
+                <label id="card-number-label" for="card-number">
+                    CARD NUMBER
+                    <input id="card-number-input" name="card-number" type="text" placeholder="1234 5678 9101 1020" aria-label="card number">
+                </label>
+            </div>
+            
+            <div id="card-holder">
+                <label id="card-holder-label" for="card-holder">
+                    CARD HOLDER
+                    <input id="card-holder-input" name="card-holder" type="text" placeholder="John Doe" aria-label="card holder">
+                </label>
+            </div>
+            
+            <label id="expiration">
+                EXPIRATION
+                <input id="expiration-input-mm" type="text" placeholder="MM" aria-label="expiration date">
+                <input id="expiration-input-yy" type="text" placeholder="YY" aria-label="expiration date">
+            </label>
+        </div>
+
+        <div class="credit-card" id="credit-back">
+            <div id="black-strip"></div>
+            <label id="cvc-cvv-label" for="cvc-cvv">
+                CVC/CVV
+                <input name="cvc-cvv" type="text" placeholder="xxx"></label aria-label="CVC CVV">
+        </div>
+
+        <button id="submit">Submit</button>
+    </form>
+
+      <p id="errors"></p>
+
+</body>
+</html>
