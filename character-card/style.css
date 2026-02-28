@@ -1,0 +1,51 @@
+.modal {
+    background-color: #802b2b;
+    color: white;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+#character-card {
+    width: 400px;
+    margin: 10px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.9);
+    background-color: #313131;
+}
+img {
+    width: 400px;
+    border-radius: 15px 15px 0 0;
+}
+#nameplate {
+    background-color: #5d747b;
+}
+h1 {
+    margin-top: -4px;
+    margin-left: 30px;
+    color: white;
+}
+p {
+    color: white;
+    margin: 5px 0px 5px 30px;
+}
+.info {
+    font-weight: bold;
+    color: white;
+}
+#buttons {
+    text-align: center;
+}
+button {
+    background-color: #5e737a;
+    border: 0px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 20px;
+}
+button:hover {
+    cursor: pointer;
+    background-color: #484848;
+}
