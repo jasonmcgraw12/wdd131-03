@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe book</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Web Title</h1>
+            <button>Home</button>
+            <form action="" role="search">
+                <!-- while the label is important for aria stuff, it's ugly. Find a way to remove it -->
+                <label for="search-bar">Search</label>
+                <input id="search-bar" type="search" placeholder="search...">
+            </form>
+        </nav>
+    </header>
+    <p class="recipe-name">Recipe Name</p>
+    <!-- repeat below for each ingredient -->
+    <label class="ingredient crossed-out">
+        <input type="checkbox">
+        list
+    </label>
+    <h3>Directions</h3>
+    <ol>
+        <li>direction1</li>
+    </ol>
+</body>
+</html>

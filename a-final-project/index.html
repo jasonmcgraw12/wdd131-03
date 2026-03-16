@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe choice</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="object.js"></script>
+    <script defer src="main.js"></script>
+    
+    <link rel="icon" href="favicon-32.ico">
+    <!-- Colors are as follows 
+     Green colors: #9FCFA5, #8FA591, #73C07C, #567A5A, #2B502F, #133316 
+     Brown colors: #83503f, #ab9475, #85703e, #b0875e, #654432-->
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Web Title</h1>
+            <button>Home</button>
+            <button>Info Tags</button>
+            <button>Baking Skills</button>
+            <form action="" role="search">
+                <!-- while the label is important for aria stuff, it's ugly. Find a way to remove it -->
+                <label for="search-bar">Search</label>
+                <input id="search-bar" type="search" placeholder="search...">
+            </form>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="card">
+            <a href="recipe/index.html" class="recipe-name">recipe name</a>
+            <img class="recipe-preview" src="images/plated-snickerdoodles.jpg" alt="image of recipe">
+            <p>short 1-2 sentence description of recipe. I will continue this to see about the size I would make 2 sentences.</p>
+            <hr>
+            <div>
+                <p class="info-title">Quick Info</p>
+                <p>Yummyness: 5/5</p>
+                <p>Weird ingredient(s): cream of tartar</p>
+                <p>Time (active/passive): 1hr/10min</p>
+                <p>Difficulty: ☠️☠️⬛️⬛️⬛️</p>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&#169; 2026 Jason McGraw</p>
+    </footer>
+</body>
+</html>
