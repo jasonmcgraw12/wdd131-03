@@ -1,0 +1,186 @@
+/*   Colors are as follows 
+     Green colors: #9FCFA5, #8FA591, #73C07C, #567A5A, #2B502F, #133316 
+     Brown colors: #83503f, #ab9475, #85703e, #b0875e, #654432 */
+/* boilerplate */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+p {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+a:hover {
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
+/* styling */
+nav {
+    background-color: #b0875e;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+h1 {
+    font-family: "Dancing Script", cursive;
+    margin: 20px 0 0 20px;
+    grid-column: 1/-1;
+}
+nav a:first-of-type {
+    margin-left: 20px;
+}
+nav a  {
+    background-color: #654432;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border: white 1px solid;
+}
+nav a:last-of-type {
+    margin-right: 20px;
+}
+nav a:hover {
+    cursor: pointer;
+    border: white 3px solid;
+    padding: 3px;
+}
+#search-forum {
+    display: flex;
+    text-align: left;
+    margin: 5px 20px 5px 20px;
+    grid-column: 1/-1;
+}
+#search-bar {
+    flex-grow: 1;
+    min-height: 20px;
+    width: 256px;
+    border-radius: 5px;
+    font-size: 1.25em;
+}
+
+
+body {
+    background-color: #83503f;
+}
+h2 {
+    font-family: Quintessential, serif;
+    color: white;
+    width: fit-content;
+    padding-left: 5px;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+#image-div {
+    text-align: center;
+    border: none;
+}
+img {
+    background-color: #83503f;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+div {
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid white;
+}
+#ingredients {
+    border: none;
+}
+#ingredients .section:first-child {
+    border-radius: 15px 15px 0 0;
+    border-top: 1px solid white;
+}
+.section {
+    background-color: #b0875e;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    border-top: 1px black dotted;
+    border-bottom: 1px black dotted;
+    margin: 0;
+}
+#ingredients .section:last-child {
+    border-radius: 0 0 15px 15px;
+    border-bottom: 1px solid white;
+}
+h3 {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.ingredient {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: large;
+}
+input[type = "checkbox"] {
+    width: 30px;
+    height: 30px;
+}
+.crossed-out {
+    text-decoration: line-through;
+    color: darkslategrey;
+}
+
+#instructions {
+    background-color: #b0875e;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+ol {
+    list-style: none;
+}
+li:first-of-type {
+    border-top: none;
+}
+li {
+    counter-increment: i;
+    padding: 10px 0 10px 0;
+    padding-left: 10px;
+    border-top: 1px black dotted;
+    border-bottom: 1px black dotted;
+}
+li:last-of-type {
+    border-bottom: none;
+}
+ol li::before {
+    display: inline-block;
+    content: counter(i);
+    background: #83503f;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-top: 1px black dotted;
+    border-bottom: 1px black dotted;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #b0875e;
+}
+
+@media (min-width: 600px) {
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    input[type = "checkbox"] {
+        width: 15px;
+        height: 15px;
+    }
+}

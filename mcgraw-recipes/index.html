@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McGraw's Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="object.js"></script>
+    <script defer src="main.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ephesis&family=Quintessential&display=swap'); 
+    </style>
+
+
+    <link rel="icon" href="favicon-32.ico">
+    <!-- Colors are as follows 
+     Green colors: #9FCFA5, #8FA591, #73C07C, #567A5A, #2B502F, #133316 
+     Brown colors: #83503f, #ab9475, #85703e, #b0875e, #654432-->
+</head>
+<body>
+    <header>
+        <nav>
+                <h1>McGraw's Recipes</h1>
+            
+                <a href="index.html">Home</a>
+                <a href="info-tags.html">Info Tags</a>
+                <a href="baking-skills.html">baking Skills</a>
+            
+                <form id="search-forum" action="" role="search">
+                    <!-- while the label is important for aria stuff, it's ugly. Find a way to remove it -->
+                    <label for="search-bar"></label>
+                    <input id="search-bar" type="search" placeholder="Search...">
+                    <button id="advanced-button">Advanced</button>
+                    
+                </form>
+        </nav>
+        <div id="blacklist" class="">
+            
+            <label for="">
+                <input type="checkbox"> 
+                ingredient1
+            </label>
+        </div>
+    </header>
+    
+    <main>
+        <div class="card">
+            <div>
+                <h2><a href="recipe/index.html" class="recipe-name">snickerdoodle</a></h2>
+                <img class="recipe-preview" src="images/plated-snickerdoodles.jpg" alt="image of recipe">
+                <p>A classic snickerdoodle recipe with amazing texture!</p>
+            </div>
+            <hr>
+            <div>
+                <p class="info-title">Quick Info</p>
+                <p>Yummyness: 5/5</p>
+                <p>Weird ingredient(s): cream of tartar</p>
+                <p>Time (active/passive): 1hr/10min</p>
+                <p>Difficulty: ☠️☠️⬛️⬛️⬛️</p>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&#169; 2026 Jason McGraw</p>
+    </footer>
+</body>
+</html>

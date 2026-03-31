@@ -1,0 +1,159 @@
+/*   Colors are as follows 
+     Green colors: #9FCFA5, #8FA591, #73C07C, #567A5A, #2B502F, #133316 
+     Brown colors: #83503f, #ab9475, #85703e, #b0875e, #654432 */
+/* boilerplate */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+p {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+a:hover {
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
+/* styling */
+nav {
+    background-color: #b0875e;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+h1 {
+    font-family: "Dancing Script", cursive;
+    margin: 20px 0 0 20px;
+    grid-column: 1/-1;
+}
+nav a:first-of-type {
+    margin-left: 20px;
+}
+nav a  {
+    background-color: #654432;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border: white 1px solid;
+}
+nav a:last-of-type {
+    margin-right: 20px;
+}
+nav a:hover {
+    cursor: pointer;
+    border: white 3px solid;
+    padding: 3px;
+}
+#search-forum {
+    display: flex;
+    text-align: left;
+    margin: 5px 20px 5px 20px;
+    grid-column: 1/-1;
+}
+#search-bar {
+    flex-grow: 1;
+    min-height: 20px;
+    width: 256px;
+    border-radius: 5px;
+    font-size: 1.25em;
+}
+
+#blacklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #83503f;
+    border: solid 2px black;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+#blacklist label {
+    background-color: aqua;
+    width: 100%;
+    border: 1px solid black;
+    
+}
+
+.card {
+    border: solid 2px black;
+    border-radius: 15px;
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,.15);
+    width: fit-content;
+    margin: 20px auto;
+    padding-bottom: 5px;
+}
+.recipe-link {
+    display: flex;
+    flex-direction: column;
+}
+.preview-div {
+    max-width: 300px;
+}
+h2 {
+    font-family: Quintessential, serif;
+    color: #83503f;
+    background-color: #ab9475;
+    border-radius: 15px 15px 0 0;
+    padding-left: 5px;
+}
+.recipe-preview {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+.image-description{
+    max-width: 300px;
+}
+.info-div {
+    flex-grow: 1;
+}
+.info-title {
+    background-color: #ab9475;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+    color: lightslategrey;
+}
+
+footer {
+    background-color: #b0875e;
+}
+
+@media (min-width: 700px) {
+    nav {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    nav a:last-of-type {
+        margin-right: 5px;
+    }
+    #search-forum {
+        grid-column: auto;
+        margin: 5px 20px 5px 5px;
+    }
+    .card {
+        width: 67%;
+    }
+    .recipe-link{
+        flex-direction: row;
+    }
+    h2 {
+    border-radius: 15px 0 0 0;
+    }
+    hr {
+        display: none;
+    }
+    .info-title{
+        border-radius: 0 15px 0 0;
+    }
+}
