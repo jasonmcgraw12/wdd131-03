@@ -81,6 +81,7 @@ function renderRecipes(recipeList){
 search.addEventListener("keydown", event => {filterRecipes(event)})
 advancedButton.addEventListener("click", event => {
     event.preventDefault()
+    console.log(blacklist)
     if (blacklist.classList.contains("hide")){
         blacklist.classList.remove("hide")
     }
@@ -147,7 +148,12 @@ function filterRecipes(event){
 }
 
 function renderBlacklist(ingredients){
-    blacklist.innerHTML = ``
+    if (ingredients.length % 2 != 0){
+        blacklist.innerHTML = `<span class="short-title">Blacklist</span>`
+    }
+    else{
+        blacklist.innerHTML = `<span class="long-title">Blacklist</span>`
+    }
     ingredients.forEach(ingredient => {
         const newHTML = `
         <label for="">

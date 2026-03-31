@@ -23,7 +23,7 @@ a:hover {
     cursor: pointer;
 }
 .hide {
-    display: none;
+    display: none !important;
 }
 /* styling */
 nav {
@@ -75,13 +75,28 @@ nav a:hover {
     border: solid 2px black;
     width: 80%;
     margin: 0 auto;
-    
+}
+.short-title {
+    grid-column: 1/2;
+    color: white;
+    text-align: center;
+    padding: 0 auto;
+    background-color: black;
+}
+.long-title {
+    grid-column: 1/3;
+    color: white;
+    text-align: center;
+    padding: 0 auto;
+    background-color: black;
 }
 #blacklist label {
-    background-color: aqua;
     width: 100%;
-    border: 1px solid black;
-    
+    border: 1px solid black;   
+}
+input[type = "checkbox"] {
+    width: 20px;
+    height: 20px;
 }
 
 .card {
