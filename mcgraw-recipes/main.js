@@ -101,7 +101,6 @@ function filterRecipes(event){
             if (checkbox.checked){
                 console.log("checkbox checked");
                 blacklistWords.push(input.innerText.trim());
-                
             }
             // if (checkbox is checked){
             //     add to blacklist array
@@ -123,7 +122,7 @@ function filterRecipes(event){
                 doesIncludeBlacklist = false;
             }
             else{
-                doesIncludeBlacklist = blacklistWords.every(word => {
+                doesIncludeBlacklist = blacklistWords.some(word => {
                     console.log("Word check = ",word.toLowerCase())
                     return filterString.includes(word.toLowerCase())})
             }
