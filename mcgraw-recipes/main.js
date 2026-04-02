@@ -81,7 +81,7 @@ function renderRecipes(recipeList){
 search.addEventListener("keydown", event => {filterRecipes(event)})
 advancedButton.addEventListener("click", event => {
     event.preventDefault()
-    console.log(blacklist)
+    // console.log(blacklist)
     if (blacklist.classList.contains("hide")){
         blacklist.classList.remove("hide")
     }
@@ -95,27 +95,27 @@ function filterRecipes(event){
         event.preventDefault();
         const words = search.value.split(" ");
         const blacklistWords = [];
-        console.log(blacklist.querySelectorAll("label"));
+        // console.log(blacklist.querySelectorAll("label"));
         blacklist.querySelectorAll("label").forEach(input => {
             const checkbox = input.firstElementChild;
             if (checkbox.checked){
-                console.log("checkbox checked");
+                // console.log("checkbox checked");
                 blacklistWords.push(input.innerText.trim());
             }
             // if (checkbox is checked){
             //     add to blacklist array
             // }
         })
-        console.log(blacklistWords);
-        console.log(words);
+        // console.log(blacklistWords);
+        // console.log(words);
 
         const filteredRecipies = recipes.filter(recipe => {
             const filterString = (recipe.title + " " + 
                                   recipe.description + " " + 
                                   recipe.ingredients.map(section => {return section.items.join(" ")}).join(" ") + " " +
                                   recipe.instructions).toLowerCase().replace(/[^\w\s]/g, "")
-            console.log(`WhiteList = ${words}
-                        blackList = ${blacklistWords}`)
+            // console.log(`WhiteList = ${words}
+                        // blackList = ${blacklistWords}`)
             const doesIncludeWhitelist = words.every(word => {return filterString.includes(word.toLowerCase())})
             let doesIncludeBlacklist = false;
             if (blacklistWords.length == 0){
@@ -123,22 +123,15 @@ function filterRecipes(event){
             }
             else{
                 doesIncludeBlacklist = blacklistWords.some(word => {
-                    console.log("Word check = ",word.toLowerCase())
+                    // console.log("Word check = ",word.toLowerCase())
                     return filterString.includes(word.toLowerCase())})
             }
-            console.log(filterString)
-            console.log(`Whitelist: ${doesIncludeWhitelist}
-                         Blacklist: ${doesIncludeBlacklist}`)
+            // console.log(filterString)
+            // console.log(`Whitelist: ${doesIncludeWhitelist}
+                        //  Blacklist: ${doesIncludeBlacklist}`)
             return (doesIncludeWhitelist && !doesIncludeBlacklist)
         })
         
-
-        // const filteredRecipies = recipes.filter(recipe => {
-        //     return (words.every(word => {return recipe.title.includes(word)})||
-        //             words.every(word => {return recipe.description.includes(word)})||
-        //             // words.every(word => {return recipe.ingredients.includes(word)})||
-        //             words.every(word => {return recipe.instructions.includes(word)}))
-        // });
         sortedRecipes = filteredRecipies.sort(compareTitle);
 
         main.innerHTML = falseSearchHTML;
@@ -165,7 +158,7 @@ function renderBlacklist(ingredients){
 
 function init(){
     const sortedRecipes = recipes.sort(compareTitle);
-    sortedRecipes.forEach(recipe => {console.log(recipe)});
+    // sortedRecipes.forEach(recipe => {console.log(recipe)});
     main.innerHTML = falseSearchHTML;
     renderRecipes(sortedRecipes);
     renderBlacklist(commonIngredients);
