@@ -91,10 +91,12 @@ nav a:hover {
     background-color: black;
 }
 #blacklist label {
+    user-select: none;
     width: 100%;
     border: 1px solid black;   
 }
 input[type = "checkbox"] {
+    position: relative;
     appearance: none;
     width: 20px;
     height: 20px;
@@ -105,11 +107,42 @@ input[type = "checkbox"] {
     background-color: white;
     accent-color: darkred;
 }
+input[type = "checkbox"]::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 10px;
+    height: 5px;
+    border-bottom: 2px darkgreen solid;
+    border-left: 2px darkgreen solid;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
 input[type = "checkbox"]:checked {
     background-color: black;
 }
-input[type = "checkbox"]::before {
-    
+input[type = "checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 15px;
+    /* border bottom and left hides the checkmark from earlier */
+    border-bottom: none;
+    border-left: none;
+    background: red;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+input[type = "checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 15px;
+    background: red;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 .exclude-checked {
     background-color: red;
