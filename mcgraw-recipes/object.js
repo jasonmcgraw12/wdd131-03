@@ -10,7 +10,8 @@ const recipes = [
                 items: [
                     "Flour: 2 2/3 cups",
                     "Baking Soda: 1/2 teaspoon",
-                    "salt: 3/4 teaspoon"
+                    "Salt: 3/4 teaspoon",
+                    "Cream of Tartar: 1 teaspoon"
                 ]
             },
             {

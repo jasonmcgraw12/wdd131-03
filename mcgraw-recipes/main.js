@@ -1,35 +1,14 @@
-// const recipes = [
-//     {
-//         title: "snickerdoodle",
-//         Description: "A classic snickerdoodle recipe with amazing mouth feel!",
-//         img: "",
+// document.addEventListener("click", e => {
+//     console.log("Clicked:", e.target, "ID:", `"${e.target.id}"`);
+// }); // CHANGE delete this, it's just for testing
 
-//         ingredients: {flour: "2 3/4 cups",
-//                       creamOfTartar: "1 teaspoon",
-//                       bakingSoda: "1/2 teaspoon",
-//                       salt: "3/4 teaspoon",
-//                       unsaltedButter: "1 cup",
-//                       sugar: "1 1/2 cups",
-//                       eggs: "2 large",
-//                       vanilla: "2 teaspoons"
-//         },
-//         instructions: [
-//             "Preheat oven to 350 degrees Fahrenheit.",
-//             "Whisk flour, cream of tartar, baking soda, and salt in a medium mixing bowl.",
-//             "In a larger bowl cream butter and sugar together.",
-//             "Add eggs and vanilla to creamed mixture.",
-//             "Combine flour and creamed mixtures together.",
-//             "Roll dough in cinnamon and sugar.",
-//             "Put cookies in the oven for 9-11 minutes."
-//         ]
-//     }
-// ];
-// WARNING I don't need the above object declaration, however, it's nice to have for the auto complete.
 const main = document.querySelector("main");
 
 const search = document.getElementById("search-bar");
 const advancedButton = document.getElementById("advanced-button")
 const blacklist = document.getElementById("blacklist");
+
+let blacklistItems = []
 
 const falseSearchHTML = `<h2>No recipe was found that matched your search.</h2>`;
 
@@ -78,17 +57,17 @@ function renderRecipes(recipeList){
     
 }
 
-search.addEventListener("keydown", event => {filterRecipes(event)})
-advancedButton.addEventListener("click", event => {
-    event.preventDefault()
-    // console.log(blacklist)
-    if (blacklist.classList.contains("hide")){
-        blacklist.classList.remove("hide")
-    }
-    else{
-        blacklist.classList.add("hide")
-    }
-})
+// search.addEventListener("keydown", event => {filterRecipes(event)})
+// advancedButton.addEventListener("click", event => {
+//     event.preventDefault()
+//     // console.log(blacklist)
+//     if (blacklist.classList.contains("hide")){
+//         blacklist.classList.remove("hide")
+//     }
+//     else{
+//         blacklist.classList.add("hide")
+//     }
+// })
 
 function filterRecipes(event){
     if (event.key === "Enter"){
@@ -139,12 +118,14 @@ function filterRecipes(event){
     }
 }
 
+
+// CHANGE the checkboxes when including or excluding should have an x or check, and change the color (of check boxes) to match
 function renderBlacklist(ingredients){
     if (ingredients.length % 2 != 0){
-        blacklist.innerHTML = `<span class="short-title">Blacklist</span>`
+        blacklist.innerHTML = `<span class="short-title">Exclude recipies with...</span>`
     }
     else{
-        blacklist.innerHTML = `<span class="long-title">Blacklist</span>`
+        blacklist.innerHTML = `<span class="long-title">Exclude recipies with...</span>`
     }
     ingredients.forEach(ingredient => {
         const newHTML = `
@@ -154,6 +135,21 @@ function renderBlacklist(ingredients){
         </label>`
         blacklist.innerHTML += newHTML // add html
     })
+    // adding checked functionality to each blacklist checkbox
+    blacklistItems = document.querySelectorAll("#blacklist label input[type='checkbox']")
+    blacklistItems.forEach(item => {item.addEventListener(
+        "change", event => {
+            console.log(item.parentElement)
+            if(item.checked){
+                item.parentElement.classList.add("exclude-checked")
+                console.log("checked")
+            }
+            else{
+                item.parentElement.classList.remove("exclude-checked")
+                console.log("unchecked")
+            }
+            }
+    )})
 }
 
 function init(){
