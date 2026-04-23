@@ -57,17 +57,17 @@ function renderRecipes(recipeList){
     
 }
 
-// search.addEventListener("keydown", event => {filterRecipes(event)})
-// advancedButton.addEventListener("click", event => {
-//     event.preventDefault()
-//     // console.log(blacklist)
-//     if (blacklist.classList.contains("hide")){
-//         blacklist.classList.remove("hide")
-//     }
-//     else{
-//         blacklist.classList.add("hide")
-//     }
-// })
+search.addEventListener("keydown", event => {filterRecipes(event)})
+advancedButton.addEventListener("click", event => {
+    event.preventDefault()
+    // console.log(blacklist)
+    if (blacklist.classList.contains("hide")){
+        blacklist.classList.remove("hide")
+    }
+    else{
+        blacklist.classList.add("hide")
+    }
+})
 
 function filterRecipes(event){
     if (event.key === "Enter"){
@@ -122,10 +122,10 @@ function filterRecipes(event){
 // CHANGE the checkboxes when including or excluding should have an x or check, and change the color (of check boxes) to match
 function renderBlacklist(ingredients){
     if (ingredients.length % 2 != 0){
-        blacklist.innerHTML = `<span class="short-title">Exclude recipies with...</span>`
+        blacklist.innerHTML = `<span class="short-title">Include recipies with...</span>`
     }
     else{
-        blacklist.innerHTML = `<span class="long-title">Exclude recipies with...</span>`
+        blacklist.innerHTML = `<span class="long-title">Include recipies with...</span>`
     }
     ingredients.forEach(ingredient => {
         const newHTML = `
