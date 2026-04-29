@@ -71,7 +71,7 @@ const recipes = [
         title: "Hot Cocoa",
         description: "A simple hot cocoa recipe that will make you want more.",
         difficulty: "☠️⬛️⬛️⬛️⬛️",
-        time: "10min",
+        time: "10min/5min",
         yummyness: "4/5",
         img: "images/hot-cocoa.jpg",
         imgalt: "Image of pan of hot cocoa with a straw sticking out",
@@ -105,5 +105,3 @@ const commonIngredients = ["Flour",
                            "Margarine",
                            "Salt"
 ]
-
-console.log(recipes[0].sections.map(section => {return section.ingredients.join(" ")}).join(" "))
