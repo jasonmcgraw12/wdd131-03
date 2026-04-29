@@ -2,12 +2,15 @@ const recipes = [
     {
         title: "Snickerdoodle",
         description: "A classic snickerdoodle recipe with amazing mouth feel!",
+        difficulty: "☠️☠️☠️⬛️⬛️",
+        time: "1hr/10min",
+        yummyness: "5/5",
         img: "images/plated-snickerdoodles.jpg",
         imgalt: "Giant pile of snickerdoodles.",
-        ingredients: [
+        sections: [
             {
-                section: "Dry Ingredients",
-                items: [
+                sectionName: "Dry Ingredients",
+                ingredients: [
                     "Flour: 2 2/3 cups",
                     "Baking Soda: 1/2 teaspoon",
                     "Salt: 3/4 teaspoon",
@@ -15,22 +18,14 @@ const recipes = [
                 ]
             },
             {
-                section: "Wet Ingredients",
-                items: [
+                sectionName: "Wet Ingredients",
+                ingredients: [
                     "Margarine: 1 cup",
                     "Sugar: 1 1/2 cups",
                     "Eggs: 2 large",
                     "Vanilla: 2 teaspoons"
                 ]
             }
-            // {name: "flour", ammount: "2 3/4 cups"},
-            //           {name: "creamOfTartar", ammount: "1 teaspoon"},
-            //           {name: "bakingSoda", ammount: "1/2 teaspoon"},
-            //           {name: "salt", ammount: "3/4 teaspoon"},
-            //           {name: "unsaltedButter", ammount: "1 cup"},
-            //           {name: "sugar", ammount: "1 1/2 cups"},
-            //           {name: "eggs", ammount: "2 large"},
-            //           {name: "vanilla", ammount: "2 teaspoons"}
         ],
         instructions: [
             "Preheat oven to 350 degrees Fahrenheit.",
@@ -45,22 +40,21 @@ const recipes = [
     {
         title: "Pie Crust",
         description: "A classic pie crust recipe.",
+        difficulty: "☠️☠️☠️⬛️⬛️",
+        time: "15min/40min",
+        yummyness: "3/5",
         img: "images/pie-crust.jpg",
         imgalt: "Image of lemonade pie",
-        ingredients: [
+        sections: [
             {
-                section: "Crust",
-                items: [
+                sectionName: "Crust",
+                ingredients: [
                     "Flour: 2 1/4 cups",
                     "Salt: 1 teaspoon",
                     "Margarine: 3/4 cup",
                     "Water: 1/3 cup"
                 ]
             }
-            // {name: "flour", ammount: "2 1/4 cups"},
-            //           {name: "salt", ammount: "1 teaspoon"},
-            //           {name: "unsaltedButter", ammount: "3/4 cup"},
-            //           {name: "water", ammount: "1/3 cup"}
         ],
         instructions: [
             "Preheat oven to 350 degrees Fahrenheit.",
@@ -76,21 +70,20 @@ const recipes = [
     {
         title: "Hot Cocoa",
         description: "A simple hot cocoa recipe that will make you want more.",
+        difficulty: "☠️⬛️⬛️⬛️⬛️",
+        time: "10min",
+        yummyness: "4/5",
         img: "images/hot-cocoa.jpg",
         imgalt: "Image of pan of hot cocoa with a straw sticking out",
-        ingredients: [
+        sections: [
             {
-                section: "Cocoa Mix",
-                items: [
+                sectionName: "Cocoa Mix",
+                ingredients: [
                     "Almond Milk: 2 cups",
                     "Sugar: 1/4 cup",
                     "Cocoa Powder: 1/4 cup"
                 ]
             }
-            // }
-            // {name: "milk", ammount: "2 cups"},
-            //           {name: "sugar", ammount: "1/4 cup"},
-            //           {name: "cocoa", ammount: "1/4 cup"}
         ],
         instructions: [
             "Turn stovetop to medium heat.",
@@ -112,6 +105,5 @@ const commonIngredients = ["Flour",
                            "Margarine",
                            "Salt"
 ]
-// WARNING yumyness and other quick info is not included yet
 
-console.log(recipes[0].ingredients.map(section => {return section.items.join(" ")}).join(" "))
+console.log(recipes[0].sections.map(section => {return section.ingredients.join(" ")}).join(" "))

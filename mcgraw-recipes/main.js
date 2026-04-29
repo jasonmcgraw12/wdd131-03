@@ -1,6 +1,3 @@
-// document.addEventListener("click", e => {
-//     console.log("Clicked:", e.target, "ID:", `"${e.target.id}"`);
-// }); // CHANGE delete this, it's just for testing
 
 const main = document.querySelector("main");
 
@@ -31,26 +28,41 @@ function renderRecipes(recipeList){
     else {
         main.innerHTML = ``;
         recipeList.forEach(recipe => {
-        const addHTML = `
-            <div class="card">
-                <a href="recipe.html?page=${recipe.title}" class="recipe-link">
-                    <div class="preview-div">
-                        <h2>${recipe.title}</h2>
-                        <img class="recipe-preview" src="${recipe.img}" alt=${recipe.imgalt}>
-                        <p class="image-description">${recipe.description}</p>
-                    </div>
-                    <hr>
-                    <div class="info-div">
-                        <p class="info-title">Quick Info</p>
-                        <p>Yummyness: 5/5</p>
-                        <p>Weird ingredient(s): cream of tartar</p>
-                        <p>Time (active/passive): 1hr/10min</p>
-                        <p>Difficulty: ☠️☠️⬛️⬛️⬛️</p>
-                    </div>
-                </a>
-            </div>
-            `;
-        main.innerHTML += addHTML;
+            const recipeIngredients = []
+            recipe.sections.forEach(section => {
+                section.ingredients.forEach(ingredient => {recipeIngredients.push(ingredient.split(":")[0])})
+            })
+            let weirdIngredients = recipeIngredients.filter(ingredient => {
+                return !commonIngredients.includes(ingredient)
+            }).join(", ")
+            let pluralIngredient = ""
+            if (weirdIngredients == ""){
+                weirdIngredients = "None"
+            }
+            if (weirdIngredients.split(",").length >= 2) {
+                pluralIngredient = "s"
+            }
+            // WARNING some recipies don't have weird ingredients, so make something for that. and "Weird ingredient(s)" looks unprofessional
+            const addHTML = `
+                <div class="card">
+                    <a href="recipe.html?page=${recipe.title}" class="recipe-link">
+                        <div class="preview-div">
+                            <h2>${recipe.title}</h2>
+                            <img class="recipe-preview" src="${recipe.img}" alt=${recipe.imgalt}>
+                            <p class="image-description">${recipe.description}</p>
+                        </div>
+                        <hr>
+                        <div class="info-div">
+                            <p class="info-title">Quick Info</p>
+                            <p>Yummyness: ${recipe.yummyness}</p>
+                            <p>Weird ingredient${pluralIngredient}: ${weirdIngredients}</p>
+                            <p>Time (active/passive): ${recipe.time}</p>
+                            <p>Difficulty: ${recipe.difficulty}</p>
+                        </div>
+                    </a>
+                </div>
+                `;
+            main.innerHTML += addHTML;
         })
     }
     
@@ -60,7 +72,6 @@ function renderRecipes(recipeList){
 search.addEventListener("keydown", event => {filterRecipes(event)})
 advancedButton.addEventListener("click", event => {
     event.preventDefault()
-    // console.log(blacklist)
     if (blacklist.classList.contains("hide")){
         blacklist.classList.remove("hide")
     }
@@ -74,27 +85,18 @@ function filterRecipes(event){
         event.preventDefault();
         const words = search.value.split(" ");
         const blacklistWords = [];
-        // console.log(blacklist.querySelectorAll("label"));
         blacklist.querySelectorAll("label").forEach(input => {
             const checkbox = input.firstElementChild;
             if (checkbox.checked){
-                // console.log("checkbox checked");
                 blacklistWords.push(input.innerText.trim());
             }
-            // if (checkbox is checked){
-            //     add to blacklist array
-            // }
         })
-        // console.log(blacklistWords);
-        // console.log(words);
 
         const filteredRecipies = recipes.filter(recipe => {
             const filterString = (recipe.title + " " + 
                                   recipe.description + " " + 
-                                  recipe.ingredients.map(section => {return section.items.join(" ")}).join(" ") + " " +
+                                  recipe.sections.map(section => {return section.ingredients.join(" ")}).join(" ") + " " +
                                   recipe.instructions).toLowerCase().replace(/[^\w\s]/g, "")
-            // console.log(`WhiteList = ${words}
-                        // blackList = ${blacklistWords}`)
             const doesIncludeWhitelist = words.every(word => {return filterString.includes(word.toLowerCase())})
             let doesIncludeBlacklist = false;
             if (blacklistWords.length == 0){
@@ -102,12 +104,8 @@ function filterRecipes(event){
             }
             else{
                 doesIncludeBlacklist = blacklistWords.some(word => {
-                    // console.log("Word check = ",word.toLowerCase())
                     return filterString.includes(word.toLowerCase())})
             }
-            // console.log(filterString)
-            // console.log(`Whitelist: ${doesIncludeWhitelist}
-                        //  Blacklist: ${doesIncludeBlacklist}`)
             return (doesIncludeWhitelist && !doesIncludeBlacklist)
         })
         
@@ -119,7 +117,8 @@ function filterRecipes(event){
 }
 
 
-// CHANGE the checkboxes when including or excluding should have an x or check, and change the color (of check boxes) to match
+// CHANGE make footer appear at bottom (probably)
+// CHANGE give search bar a submit button, instead of having to select search and hit enter (maybe just for the advanced section)
 function renderBlacklist(ingredients){
     if (ingredients.length % 2 != 0){
         blacklist.innerHTML = `<span class="short-title">Include recipies with...</span>`
@@ -139,14 +138,11 @@ function renderBlacklist(ingredients){
     blacklistItems = document.querySelectorAll("#blacklist label input[type='checkbox']")
     blacklistItems.forEach(item => {item.addEventListener(
         "change", event => {
-            console.log(item.parentElement)
             if(item.checked){
                 item.parentElement.classList.add("exclude-checked")
-                console.log("checked")
             }
             else{
                 item.parentElement.classList.remove("exclude-checked")
-                console.log("unchecked")
             }
             }
     )})
@@ -154,7 +150,6 @@ function renderBlacklist(ingredients){
 
 function init(){
     const sortedRecipes = recipes.sort(compareTitle);
-    // sortedRecipes.forEach(recipe => {console.log(recipe)});
     main.innerHTML = falseSearchHTML;
     renderRecipes(sortedRecipes);
     renderBlacklist(commonIngredients);
