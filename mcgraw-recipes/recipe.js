@@ -14,10 +14,10 @@ function renderRecipe(recipe) {
     recipeImage.innerHTML = newHTML
     // render ingredients
     newHTML = ``
-    recipe.ingredients.forEach(section => {
-        const sectionName = `<h3>${section.section}</h3>`
+    recipe.sections.forEach(section => {
+        const sectionName = `<h3>${section.sectionName}</h3>`
         let ingredientNames = ``
-        section.items.forEach(ingredient => {
+        section.ingredients.forEach(ingredient => {
             ingredientNames += `<label class="ingredient">
                 <input type="checkbox">
                 <span class="ingredient-text">${ingredient}</span>
