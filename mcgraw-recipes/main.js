@@ -2,8 +2,10 @@
 const main = document.querySelector("main");
 
 const search = document.getElementById("search-bar");
+const magensearch = document.getElementById("search-submit")
 const advancedButton = document.getElementById("advanced-button")
 const blacklist = document.getElementById("blacklist");
+
 
 let blacklistItems = []
 
@@ -69,7 +71,14 @@ function renderRecipes(recipeList){
     
 }
 
-search.addEventListener("keydown", event => {filterRecipes(event)})
+search.addEventListener("keydown", event => {
+    if (event.key === "Enter"){
+        filterRecipes(event)
+    }
+})
+magensearch.addEventListener("click", event => {
+    filterRecipes(event)
+})
 advancedButton.addEventListener("click", event => {
     event.preventDefault()
     if (blacklist.classList.contains("hide")){
@@ -81,39 +90,38 @@ advancedButton.addEventListener("click", event => {
 })
 
 function filterRecipes(event){
-    if (event.key === "Enter"){
-        event.preventDefault();
-        const words = search.value.split(" ");
-        const blacklistWords = [];
-        blacklist.querySelectorAll("label").forEach(input => {
-            const checkbox = input.firstElementChild;
-            if (checkbox.checked){
-                blacklistWords.push(input.innerText.trim());
-            }
-        })
+    console.log(event.key)
+    event.preventDefault();
+    const words = search.value.split(" ");
+    const blacklistWords = [];
+    blacklist.querySelectorAll("label").forEach(input => {
+        const checkbox = input.firstElementChild;
+        if (checkbox.checked){
+            blacklistWords.push(input.innerText.trim());
+        }
+    })
 
-        const filteredRecipies = recipes.filter(recipe => {
-            const filterString = (recipe.title + " " + 
-                                  recipe.description + " " + 
-                                  recipe.sections.map(section => {return section.ingredients.join(" ")}).join(" ") + " " +
-                                  recipe.instructions).toLowerCase().replace(/[^\w\s]/g, "")
-            const doesIncludeWhitelist = words.every(word => {return filterString.includes(word.toLowerCase())})
-            let doesIncludeBlacklist = false;
-            if (blacklistWords.length == 0){
-                doesIncludeBlacklist = false;
-            }
-            else{
-                doesIncludeBlacklist = blacklistWords.some(word => {
-                    return filterString.includes(word.toLowerCase())})
-            }
-            return (doesIncludeWhitelist && !doesIncludeBlacklist)
-        })
-        
-        sortedRecipes = filteredRecipies.sort(compareTitle);
+    const filteredRecipies = recipes.filter(recipe => {
+        const filterString = (recipe.title + " " + 
+                                recipe.description + " " + 
+                                recipe.sections.map(section => {return section.ingredients.join(" ")}).join(" ") + " " +
+                                recipe.instructions).toLowerCase().replace(/[^\w\s]/g, "")
+        const doesIncludeWhitelist = words.every(word => {return filterString.includes(word.toLowerCase())})
+        let doesIncludeBlacklist = false;
+        if (blacklistWords.length == 0){
+            doesIncludeBlacklist = false;
+        }
+        else{
+            doesIncludeBlacklist = blacklistWords.some(word => {
+                return filterString.includes(word.toLowerCase())})
+        }
+        return (doesIncludeWhitelist && !doesIncludeBlacklist)
+    })
+    
+    sortedRecipes = filteredRecipies.sort(compareTitle);
 
-        main.innerHTML = falseSearchHTML;
-        renderRecipes(sortedRecipes);
-    }
+    main.innerHTML = falseSearchHTML;
+    renderRecipes(sortedRecipes);
 }
 
 
