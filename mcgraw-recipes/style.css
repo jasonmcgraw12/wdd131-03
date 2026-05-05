@@ -53,13 +53,16 @@ h1 {
 nav a:first-of-type {
     margin-left: 20px;
 }
-nav a  {
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #654432;
     color: white;
     padding: 5px;
     margin: 5px;
     border: white 1px solid;
-    text-align: center;
+    /* text-align: center; */
 }
 nav a:last-of-type {
     margin-right: 20px;
