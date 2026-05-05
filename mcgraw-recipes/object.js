@@ -11,7 +11,7 @@ const recipes = [
             {
                 sectionName: "Dry Ingredients",
                 ingredients: [
-                    "Flour: 2 2/3 cups",
+                    "Flour: 2 1/2 cups", // was 2 and 2/3 cups
                     "Baking Soda: 1/2 teaspoon",
                     "Salt: 3/4 teaspoon",
                     "Cream of Tartar: 1 teaspoon"

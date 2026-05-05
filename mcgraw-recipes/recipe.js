@@ -6,7 +6,6 @@ const recipeImage = document.getElementById("image-div")
 const instructions = document.querySelector("#instructions ol")
 
 
-console.log(recipeTitle);
 
 function renderRecipe(recipe) {
     // render image
@@ -15,19 +14,35 @@ function renderRecipe(recipe) {
     // render ingredients
     newHTML = ``
     recipe.sections.forEach(section => {
+        console.log(section.sectionName)
         const sectionName = `<h3>${section.sectionName}</h3>`
+        const ingredientSection = document.createElement("div")
+        ingredientSection.classList.add("section")
+        ingredientSection.innerHTML = sectionName
         let ingredientNames = ``
         section.ingredients.forEach(ingredient => {
-            ingredientNames += `<label class="ingredient">
-                <input type="checkbox">
-                <span class="ingredient-text">${ingredient}</span>
-            </label>`
+            const ingredientLabel = document.createElement("label")
+            const ingredientInput = document.createElement("input")
+            const ingredientSpan = document.createElement("span")
+            ingredientLabel.classList.add("ingredient")
+            ingredientInput.type = "checkbox"
+            ingredientInput.addEventListener("click", (event) => {
+                if (event.target.checked){
+                    ingredientSpan.classList.add("crossed-out")
+                }
+                else{
+                    ingredientSpan.classList.remove("crossed-out")
+                }
+            })
+            ingredientSpan.classList.add("ingredient-text")
+            ingredientSpan.textContent = ingredient
+            ingredientLabel.appendChild(ingredientInput)
+            ingredientLabel.appendChild(ingredientSpan)
+            ingredientSection.appendChild(ingredientLabel)
+            console.log(ingredientSection.innerHTML)
         })
-        newHTML += `<div class="section">${sectionName}
-        ${ingredientNames}</div>`
+        ingredients.appendChild(ingredientSection)
     })
-    console.log("Ingredient html is...\n",newHTML)
-    ingredientSections.innerHTML = newHTML
     // render instructions
     newHTML = ``
     recipe.instructions.forEach(instruction => {
@@ -38,10 +53,8 @@ function renderRecipe(recipe) {
 
 function init() {
     const recipe = recipes.filter(recipe => {
-        console.log("does it equal ",recipe.title)
         return recipe.title == recipeTitle;
     })[0]
-    console.log(recipe)
     renderRecipe(recipe)
 }
 
