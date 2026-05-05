@@ -4,8 +4,7 @@ const recipeTitle = urlParams.get('page');
 const ingredientSections = document.getElementById("ingredients")
 const recipeImage = document.getElementById("image-div")
 const instructions = document.querySelector("#instructions ol")
-
-
+const recipeHeadder = document.querySelector("h2")
 
 function renderRecipe(recipe) {
     // render image
@@ -14,7 +13,6 @@ function renderRecipe(recipe) {
     // render ingredients
     newHTML = ``
     recipe.sections.forEach(section => {
-        console.log(section.sectionName)
         const sectionName = `<h3>${section.sectionName}</h3>`
         const ingredientSection = document.createElement("div")
         ingredientSection.classList.add("section")
@@ -39,7 +37,6 @@ function renderRecipe(recipe) {
             ingredientLabel.appendChild(ingredientInput)
             ingredientLabel.appendChild(ingredientSpan)
             ingredientSection.appendChild(ingredientLabel)
-            console.log(ingredientSection.innerHTML)
         })
         ingredients.appendChild(ingredientSection)
     })
@@ -53,6 +50,7 @@ function renderRecipe(recipe) {
 
 function init() {
     const recipe = recipes.filter(recipe => {
+        recipeHeadder.innerText = recipeTitle
         return recipe.title == recipeTitle;
     })[0]
     renderRecipe(recipe)

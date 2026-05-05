@@ -1,6 +1,6 @@
 const recipes = [
     {
-        title: "Snickerdoodle",
+        title: "Snickerdoodles",
         description: "A classic snickerdoodle recipe with amazing mouth feel!",
         difficulty: "☠️☠️☠️⬛️⬛️",
         time: "1hr/10min",
