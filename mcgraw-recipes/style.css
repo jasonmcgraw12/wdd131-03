@@ -167,11 +167,20 @@ input[type = "checkbox"]:checked::after {
     background-color: red;
 }
 
+ul {
+    padding-left: 40px;
+    list-style-type: circle;
+}
+li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .card {
     border: solid 2px black;
     border-radius: 15px;
     box-shadow: 0 15px 15px 0 rgba(0,0,0,.15);
-    width: fit-content;
+    width: 303px;
     margin: 20px auto;
     padding-bottom: 5px;
 }
