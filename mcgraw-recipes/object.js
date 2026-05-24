@@ -4,7 +4,7 @@ const recipes = [
         description: "A classic snickerdoodle recipe with amazing mouth feel!",
         difficulty: "☠️☠️☠️⬛️⬛️",
         time: "1hr/10min",
-        yummyness: "5/5",
+        yummyness: "⭐⭐⭐⭐⭐",
         img: "images/plated-snickerdoodles.jpg",
         imgalt: "Giant pile of snickerdoodles.",
         sections: [
@@ -43,7 +43,7 @@ const recipes = [
         description: "A classic pie crust recipe.",
         difficulty: "☠️☠️☠️⬛️⬛️",
         time: "15min/40min",
-        yummyness: "3/5",
+        yummyness: "⭐⭐⭐☆☆",
         img: "images/pie-crust.jpg",
         imgalt: "Image of lemonade pie",
         sections: [
@@ -73,7 +73,7 @@ const recipes = [
         description: "A simple hot cocoa recipe that will make you want more.",
         difficulty: "☠️⬛️⬛️⬛️⬛️",
         time: "10min/5min",
-        yummyness: "4/5",
+        yummyness: "⭐⭐⭐⭐☆",
         img: "images/hot-cocoa.jpg",
         imgalt: "Image of pan of hot cocoa with a straw sticking out",
         sections: [
@@ -97,7 +97,7 @@ const recipes = [
         description: "A yummy yummy brownie recipe",
         difficulty: "☠️☠️⬛️⬛️⬛️",
         time: "30min/30min",
-        yummyness: "5/5",
+        yummyness: "⭐⭐⭐⭐⭐",
         img: "images/square-brownies.jpg",
         imgalt: "Image of delicious brownies that lived short lives",
         sections: [
@@ -220,5 +220,9 @@ const commonIngredients = ["Flour",
                            "Milk",
                            "Butter",
                            "Margarine",
-                           "Salt"
+                           "Salt",
+                           "Vanilla Extract", 
+                           "Baking Powder",
+                           "Baking Soda",
+                           "Chocolate Chips"
 ]

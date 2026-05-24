@@ -56,10 +56,10 @@ function renderRecipes(recipeList){
                         <hr>
                         <div class="info-div">
                             <p class="info-title">Quick Info</p>
-                            <p>Yummyness: ${recipe.yummyness}</p>
-                            <p>Weird ingredient${pluralIngredient}: ${weirdIngredients}</p>
-                            <p>Time (active/passive): ${recipe.time}</p>
-                            <p>Difficulty: ${recipe.difficulty}</p>
+                            <p><span class="category">Yummyness:</span> ${recipe.yummyness}</p>
+                            <p><span class="category">Difficulty:</span> ${recipe.difficulty}</p>
+                            <p><span class="category">Weird ingredient${pluralIngredient}:</span> ${weirdIngredients}</p>
+                            <p><span class="category">Time (active/passive):</span> ${recipe.time}</p>
                         </div>
                     </a>
                 </div>

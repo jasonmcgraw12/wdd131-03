@@ -1,6 +1,22 @@
 /*   Colors are as follows 
      Green colors: #9FCFA5, #8FA591, #73C07C, #567A5A, #2B502F, #133316 
      Brown colors: #83503f, #ab9475, #85703e, #b0875e, #654432 */
+:root {
+    --text-color: black;
+    --heading-color: black;
+    --heading-background-color: #B87A75;
+    --accent-color: #7AB894; 
+    --card-background-color: #7A77B8;
+    --whitespace-color: #dcdbda;
+    --border-color: black;
+    --checked-color: #7AB894;
+    --unchecked-color: #B87A75;
+    /* brown colors...
+    --text-color: black;
+    --heading-color: #83503f;
+    --heading-background-color: #b0875e;
+    --accent-color: #654432; */
+}
 /* boilerplate */
 * {
   padding: 0;
@@ -12,7 +28,7 @@ body {
   width: 100vw;
 }
 a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
 }
 p {
@@ -27,7 +43,7 @@ a:hover {
 }
 /* styling */
 nav {
-    background-color: #b0875e;
+    background-color: var(--heading-background-color);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -40,18 +56,18 @@ nav a:first-of-type {
     margin-left: 20px;
 }
 nav a  {
-    background-color: #654432;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--text-color);
     padding: 5px;
     margin: 5px;
-    border: white 1px solid;
+    border: var(--border-color) 1px solid;
 }
 nav a:last-of-type {
     margin-right: 20px;
 }
 nav a:hover {
     cursor: pointer;
-    border: white 3px solid;
+    border: var(--border-color) 3px solid;
     padding: 3px;
 }
 #search-forum {
@@ -70,14 +86,15 @@ nav a:hover {
 
 
 body {
-    background-color: #83503f;
+    background-color: var(--whitespace-color);
 }
 h2 {
+    background-color: var(--heading-background-color);
     font-family: Quintessential, serif;
-    color: white;
+    color: var(--text-color);
     width: fit-content;
     padding-left: 5px;
-    border: 1px solid white;
+    border: 1px solid var(--border-color);
     margin-top: 20px;
     margin-left: 10%;
 }
@@ -85,37 +102,40 @@ h2 {
     border: none;
 }
 img {
-    background-color: #83503f;
     height: 300px;
     width: 300px;
     object-fit: cover;
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     margin: 0 auto;
 }
 div {
     width: 95%;
     margin: 0 auto;
-    border: 1px solid white;
+    border: 1px solid var(--border-color);
 }
 #ingredients {
     border: none;
 }
 #ingredients .section:first-child {
     border-radius: 15px 15px 0 0;
-    border-top: 1px solid white;
+    border-top: 1px solid var(--border-color);
 }
 .section {
-    background-color: #b0875e;
+    background-color: var(--card-background-color);
     display: flex;
     flex-direction: column;
     width: auto;
-    border-top: 1px black dotted;
-    border-bottom: 1px black dotted;
+    border-top: 1px var(--border-color) dotted;
+    border-bottom: 1px var(--border-color) dotted;
     margin: 0;
+}
+#ingredients .section:nth-child(even) {
+    background-color: var(--heading-background-color);
 }
 #ingredients .section:last-child {
     border-radius: 0 0 15px 15px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--border-color);
 }
 #ingredients .section:only-child {
     border-radius: 15px 15px 15px 15px;
@@ -141,7 +161,7 @@ input[type = "checkbox"] {
 }
 
 #instructions {
-    background-color: #b0875e;
+    background-color: var(--card-background-color);
     border-radius: 15px;
     margin-bottom: 20px;
 }
@@ -155,8 +175,11 @@ li {
     counter-increment: i;
     padding: 10px 0 10px 0;
     padding-left: 10px;
-    border-top: 1px black dotted;
-    border-bottom: 1px black dotted;
+    border-top: 1px var(--border-color) dotted;
+    border-bottom: 1px var(--border-color) dotted;
+}
+li:nth-child(even) {
+    background-color: var(--heading-background-color);
 }
 li:last-of-type {
     border-bottom: none;
@@ -164,18 +187,18 @@ li:last-of-type {
 ol li::before {
     display: inline-block;
     content: counter(i);
-    background: #83503f;
+    background: var(--accent-color);
     width: 20px;
     height: 20px;
     text-align: center;
-    border-top: 1px black dotted;
-    border-bottom: 1px black dotted;
+    border-top: 1px var(--border-color) dotted;
+    border-bottom: 1px var(--border-color) dotted;
     border-radius: 50px;
     margin-right: 10px;
 }
 
 footer {
-    background-color: #b0875e;
+    background-color: var(--heading-background-color);
 }
 
 @media (min-width: 600px) {
