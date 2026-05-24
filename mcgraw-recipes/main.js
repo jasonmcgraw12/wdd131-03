@@ -51,15 +51,17 @@ function renderRecipes(recipeList){
                         <div class="preview-div">
                             <h2>${recipe.title}</h2>
                             <img class="recipe-preview" src="${recipe.img}" alt=${recipe.imgalt}>
-                            <p class="image-description">${recipe.description}</p>
                         </div>
-                        <hr>
                         <div class="info-div">
                             <p class="info-title">Quick Info</p>
-                            <p><span class="category">Yummyness:</span> ${recipe.yummyness}</p>
-                            <p><span class="category">Difficulty:</span> ${recipe.difficulty}</p>
-                            <p><span class="category">Weird ingredient${pluralIngredient}:</span> ${weirdIngredients}</p>
-                            <p><span class="category">Time (active/passive):</span> ${recipe.time}</p>
+                            <p class="info-tag"><span class="category">Yummyness:</span> ${recipe.yummyness}</p>
+                            <p class="info-tag"><span class="category">Difficulty:</span> ${recipe.difficulty}</p>
+                            <p class="info-tag"><span class="category">Odd ingredient${pluralIngredient}:</span> ${weirdIngredients}</p>
+                            <p class="info-tag"><span class="category">Time:</span> ${recipe.time}</p>
+                        </div>
+                        <div class="description-div">
+                            <p class="info-title">Description</p>
+                            <p class="description">${recipe.description}</p>
                         </div>
                     </a>
                 </div>
