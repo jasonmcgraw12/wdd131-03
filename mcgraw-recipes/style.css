@@ -103,7 +103,7 @@ nav a:hover {
 #search-bar {
     flex-grow: 1;
     min-height: 20px;
-    width: 256px;
+    width: 50px;
     border-radius: 5px;
     font-size: 1.25em;
     background-color: var(--whitespace-color);
