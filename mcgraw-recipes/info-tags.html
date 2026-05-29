@@ -6,6 +6,7 @@
     <meta name="description" content="A page to answer questions about how I rate recipes.">
     <title>McGraw's Recipes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="info-tags.css">
     <script defer src="object.js"></script>
     <script defer src="info-tags.js"></script>
     <style>
@@ -28,39 +29,47 @@
     </header>
     
     <main>
-        <h2>Common Ingredients</h2>
-        <p>If an ingredient isn't in this list it will be listed under the "Weird ingredient(s)" in the quick info section of a recipe. Below are common ingredients that are useful to have.</p>
-        <ul id="common-ingredient-list">
-            <!-- this will be updated with js to make it dynamic -->
-        </ul>
-        <h2>Difficulty</h2>
-        <p>Difficulty is measured by how many tools you need to make the recipe, specific techniques, and multiple steps. Some specific things that increase difficulty are listed below.</p>
-        <ul>
-            <li>Snickerdoodles use a lot of different sized measuring cups.</li>
-            <li>Pie dough requires rolling out dough which is difficult if you don't know how to do it.</li>
-            <li>Lemon squares require a crust and a filling. These multiple steps increase difficulty.</li>
-        </ul>
-        <h2>Time</h2>
-        <p>Time is measured by active and passive time spent. Active time is measured by the ammount of time one person takes to make a recipe. Passive time is measured by things that don't require a person. Some examples of active and passive actions are listed below.</p>
-        <p>Active actions:</p>
-        <ul>
-            <li>Mixing dough</li>
-            <li>Rolling dough</li>
-            <li>Decorating cookies</li>
-        </ul>
-        <p>Passive actions:</p>
-        <ul>
-            <li>chilling dough</li>
-            <li>Baking dough</li>
-            <li>Waiting for bread to rise</li>
-        </ul>
-        <h2>Yummyness</h2>
-        <p>Yummyness is purely opinion based and is based on my own preferences. Below are things I take into acount when judging yummyness.</p>
-        <ul>
-            <li>Texture</li>
-            <li>Taste</li>
-            <li>Does it make me feel sick if I eat a dozen?</li>
-        </ul>
+        <div class="content-block">
+            <h2>Common Ingredients</h2>
+            <p>If an ingredient isn't in this list it will be listed under the "Weird ingredient(s)" in the quick info section of a recipe. Below are common ingredients that are useful to have.</p>
+            <ul id="common-ingredient-list">
+                <!-- this will be updated with js to make it dynamic -->
+            </ul>
+        </div>
+        <div class="content-block">
+            <h2>Difficulty</h2>
+            <p>Difficulty is measured by how many tools you need to make the recipe, specific techniques, and multiple steps. Some specific things that increase difficulty are listed below.</p>
+            <ul>
+                <li>Snickerdoodles use a lot of different sized measuring cups.</li>
+                <li>Pie dough requires rolling out dough which is difficult if you don't know how to do it.</li>
+                <li>Lemon squares require a crust and a filling. These multiple steps increase difficulty.</li>
+            </ul>
+        </div>
+        <div class="content-block">
+            <h2>Time</h2>
+            <p>Time is measured by active and passive time spent. Active time is measured by the ammount of time one person takes to make a recipe. Passive time is measured by things that don't require a person. Some examples of active and passive actions are listed below.</p>
+            <p>Active actions:</p>
+            <ul>
+                <li>Mixing dough</li>
+                <li>Rolling dough</li>
+                <li>Decorating cookies</li>
+            </ul>
+            <p>Passive actions:</p>
+            <ul>
+                <li>chilling dough</li>
+                <li>Baking dough</li>
+                <li>Waiting for bread to rise</li>
+            </ul>
+        </div>
+        <div class="content-block">
+            <h2>Yummyness</h2>
+            <p>Yummyness is purely opinion based and is based on my own preferences. Below are things I take into acount when judging yummyness.</p>
+            <ul>
+                <li>Texture</li>
+                <li>Taste</li>
+                <li>Does it make me feel sick if I eat a dozen?</li>
+            </ul>
+        </div>
     </main>
 
     <footer>
