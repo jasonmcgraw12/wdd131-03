@@ -2,7 +2,7 @@ const recipes = [
     {
         title: "Snickerdoodles",
         description: "A classic snickerdoodle recipe with amazing mouth feel!",
-        difficulty: "☠️☠️☠️⬛️⬛️",
+        difficulty: "☠️☠️⬛️⬛️⬛️",
         time: "1hr/10min",
         yummyness: "⭐⭐⭐⭐⭐",
         img: "images/plated-snickerdoodles.jpg",
@@ -20,19 +20,19 @@ const recipes = [
             {
                 sectionName: "Wet Ingredients",
                 ingredients: [
-                    "Margarine: 1 cup",
                     "Sugar: 1 1/2 cups",
+                    "Margarine: 1 cup",
                     "Eggs: 2 large",
                     "Vanilla: 2 teaspoons"
                 ]
             }
         ],
         instructions: [
-            "Preheat oven to 350 degrees Fahrenheit.",
             "Whisk flour, cream of tartar, baking soda, and salt in a medium mixing bowl.",
             "In a larger bowl cream butter and sugar together.",
             "Add eggs and vanilla to creamed mixture.",
-            "Combine flour and creamed mixtures together.",
+            "Combine flour and your creamed mixture together.",
+            "Preheat oven to 350 degrees Fahrenheit.",
             "Roll dough in cinnamon and sugar.",
             "Put cookies in the oven for 9-11 minutes.",
             "Snicker your doodle."
@@ -94,7 +94,7 @@ const recipes = [
     },
     {
         title: "Brownies",
-        description: "A yummy yummy brownie recipe",
+        description: "A yummy yummy brownie recipe.",
         difficulty: "☠️☠️⬛️⬛️⬛️",
         time: "30min/30min",
         yummyness: "⭐⭐⭐⭐⭐",
@@ -145,12 +145,62 @@ const recipes = [
             "Fold in optional ingredients as desired.",
             "Bake for 30 to 35 minutes (you can cook your eggs now)."
         ]
+    },
+    {
+        title: "Soft Pretzels",
+        description: "A prezel recipe that will make you feel German in no time.",
+        difficulty: "☠️☠️☠️⬛️⬛️",
+        time: "1hr/20min",
+        yummyness: "⭐⭐⭐☆☆",
+        img: "images/pretzels.jpg",
+        imgalt: "A tray of pretzels",
+        sections: [
+            {
+                sectionName: "Yeast Mix",
+                ingredients: [
+                    "Active Dry Yeast: 2 1/4 teaspoon",
+                    "Brown Sugar: 1 tablespoon",
+                    "Water: 1 1/2 cups"
+                ]
+            },
+            {
+                sectionName: "Dry Ingredients",
+                ingredients: [
+                    "Margarine: 1 tablespoon",
+                    "Salt: 1 teaspoon",
+                    "Flour: 3 3/4 cups"
+                ]
+            },
+            {
+                sectionName: "Baking Soda Bath",
+                ingredients: [
+                    "Baking Soda: 1/2 cups",
+                    "Water: 5 cups"
+                ]
+            }
+        ],
+        instructions: [
+            "Whisk the yeast, sugar, and water together, then let it sit for 1 minute.",
+            "Whisk in margarine and salt.",
+            "Add in only 3 cups of flour and mix until combined.",
+            "Add in 3/4 cups of flour and mix the dough. If the dough still sticks to your bowl add flour in small increments (you shouldn't need more than 1/4 cup extra flour).",
+            "Knead the dough until you can pull off a piece of dough, stretch it, and see light through it without the dough tearing (this is known as the windowpane test).",
+            "Cover the top with a towel and let the dough rest for 30 minutes.",
+            "Preheat oven to 400 degrees Fahrenheit.",
+            "Add baking soda and water to a pot.",
+            "Cut dough into 1/3 cup sized balls.",
+            "Roll out the balls until they're about 2 feet in length.",
+            "Then take the dough and form the breast cancer awareness symbol and fold the twisted part towards yourself. Press the shape together so it stickes to itself",
+            "Get the baking soda bath boiling and drop 1-2 pretzels in, wait for 20-30 seconds, then take them out and put them on a tray.",
+            "Sprinkle coarse salt on top of your prezels or use any other seasoning of choice (you can also make a pretzel dip).",
+            "Bake for 12-15 minutes."
+        ]
     }
    /*
     , // change this comma
     {
         title: "Brownies",
-        description: "A yummy yummy brownie recipe",
+        description: "A yummy yummy brownie recipe.",
         difficulty: "☠️☠️⬛️⬛️⬛️",
         time: "30min/30min",
         yummyness: "5/5",
@@ -206,9 +256,12 @@ const recipes = [
 
 
 // Add Fudge, Brownies, oatmeal chocolate chip, oatmeal raisin, chocolate chip, slices or pielings(the dumpling pie recipe I want to make), biscuts, scones,
-// churros, prezzels, Madeleines, turnovers, dessert bars, Danish, ginger bread, lemon bread
+// churros, prezzels, Madeleines, turnovers, dessert bars, Danish, ginger bread, lemon bread, doughnut, pancakes, cream puffs, angel cake, french toast
 // With logo, could incorperate letters of my name
 // could make the whole logo in one line
+// make a notes section and a story section for each recipe incase people want to understand baking better and be entertained
+// make a way for me to link words in instruction/description sections so that they can easily see how much of an ingredient to add
+// or if they want they can click on a link to take them to a page that tells them the technique in detail (like how to fold a pretzel)
 
 const commonIngredients = ["Flour",
                            "Eggs",

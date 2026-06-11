@@ -244,14 +244,17 @@ h2 {
 }
 .info-div {
     height: auto;
-    min-width: 115px;
-    flex-grow: 1;
+    width: 115px;
+    flex: none;
 }
 .info-tag {
     padding: 0;
 }
 .info-title {
     background-color: var(--heading-background-color);
+}
+.description-div {
+    flex-grow: 1;
 }
 
 .crossed-out {
