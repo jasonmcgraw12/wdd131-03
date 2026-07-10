@@ -195,6 +195,93 @@ const recipes = [
             "Sprinkle coarse salt on top of your prezels or use any other seasoning of choice (you can also make a pretzel dip).",
             "Bake for 12-15 minutes."
         ]
+    },
+    {
+        title: "Bannana Bread",
+        description: "Bannana bread to get milage out of those old bannanas.",
+        difficulty: "☠️☠️⬛️⬛️⬛️",
+        time: "25min/60min",
+        yummyness: "⭐⭐⭐☆☆",
+        img: "images/one-bannana-bread.jpg",
+        imgalt: "Image of old bannanas that have reincarnated into bannana bread.",
+        sections: [
+            {
+                sectionName: "Batter",
+                ingredients: [
+                    "Margarine: 1/2 cup", 
+                    "Sugar: 3/4 cup",
+                ]
+            },
+            {
+                sectionName: "Bannana Guts",
+                ingredients: [
+                    "Old Bannanas: 3 count",
+                    "Eggs: 2 large",
+                    "Vanilla: 1/2 teaspoon"
+                ]
+            },
+            {
+                sectionName: "Dry Ingredients",
+                ingredients: [
+                    "Flour: 1 1/2 cup",
+                    "Baking Soda: 1 teaspoon",
+                    "Salt: 1/2 teaspoon"
+                ]
+            },
+            {
+                sectionName: "Optional Ingredients",
+                ingredients: [
+                    // "Chocolate Chips: 1/2 cup",
+                    "raisins: 1/2 cup",
+                    "Chopped Walnuts: 1 cup"
+                ]
+            }
+        ],
+        instructions: [
+            "Preheat oven to 350 degrees Fahrenheit.",
+            "Grease and flour a bread pan.",
+            "Cream together margarine and sugar.",
+            "In a seperate bowl, Mash bannanas, eggs, and vanilla together, until you get a chunky bannana paste.",
+            "Mix bannana guts into the batter",
+            "In a seperate bowl, whisk flour, baking soda, and salt together.",
+            "Mix the dry ingredients into the batter.",
+            "Mix in optional ingredients as desired.",
+            "Bake for 60 minutes. (Test the center with a toothpick)"
+        ]
+    },
+    {
+        title: "French Toast",
+        description: "A french toast recipe to repurpose your hardened bread.",
+        difficulty: "☠️⬛️⬛️⬛️⬛️",
+        time: "5min/5min", // I don't know if this is the actual length of french toast
+        yummyness: "⭐⭐⭐⭐⭐",
+        img: "images/french-toast.jpg",
+        imgalt: "Image of french toast decorated with powdered sugar and syrup",
+        sections: [
+            {
+                sectionName: "Egg Wash",
+                ingredients: [
+                    "Almond Milk: 1/2 cup",
+                    "Sugar: 1/4 cup",
+                    "Cinnamon: 1 teaspoon", // these ingredients are a test, I haven't confirmed that this leads to good french toast.
+                    "Egg: 1 large"
+                ]
+            },
+            {
+                sectionName: "Optional Decoration", // CHANGE every section name with optional at the start, should hide it's ingredients from the weird ingredient list on the card
+                ingredients: [
+                    "Powdered Sugar: 1 tablespoon"
+                ]
+            }
+        ],
+        instructions: [
+            "Grab a frying pan and turn your stovetop to medium heat.",
+            "In a bowl whisk together an egg and the milk.",
+            "Add sugar and cinnamon to the mix.",
+            "Soak both sides of your bread in the Egg Wash. (If you're using a small pan, you can cut the bread into strips)",
+            "Pan fry the bread until it stops sizzling.",
+            "If desired, use a fine-mesh sieve to sift powdered sugar onto your toast."
+        ]
     }
    /*
     , // change this comma
