@@ -91,7 +91,7 @@ nav a:last-of-type {
 }
 nav a:hover {
     cursor: pointer;
-    border: white 3px solid;
+    border: var(--text-color) 3px solid;
     padding: 3px;
 }
 #search-forum {
@@ -209,7 +209,7 @@ li {
 .card {
     border: solid 2px var(--border-color);
     border-radius: 15px;
-    box-shadow: 0 15px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,.30);
     width: 303px;
     margin: 20px auto;
     background-color: var(--card-background-color);
@@ -238,18 +238,20 @@ h2 {
     padding-bottom: 5px;
 }
 .category {
-    background-color: var(--accent-color);
-    border: var(--border-color) solid 1px;
-    padding: 2px;
+    font-weight: bold;
+    /* background-color: var(--accent-color); */
+    /* border: var(--border-color) solid 1px; */
+    /* padding: 2px; */
 }
 .info-div {
     height: auto;
     flex: none;
 }
 .info-tag {
-    padding: 0;
+    padding-left: 2px;
 }
 .info-title {
+    font-weight: bold;
     background-color: var(--heading-background-color);
 }
 .description-div {
@@ -292,9 +294,10 @@ footer {
         display: none;
     }
     .info-div{
-        width: 115px;
+        width: 125px;
     }
     .info-title {
+        height: 36.8px;
         border-radius: 0;
     }
     .description-div .info-title:first-of-type {
